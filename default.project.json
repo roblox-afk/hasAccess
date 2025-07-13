@@ -1,0 +1,14 @@
+{
+  "name": "hasAccess",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "HasAccess": {
+        "$path": "src"
+      },
+      "DevPackages": {
+      "$path": "DevPackages"
+    }
+    }
+  }
+}

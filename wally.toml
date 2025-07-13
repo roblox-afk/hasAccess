@@ -1,0 +1,10 @@
+[package]
+name = "roblox-afk/hasaccess"
+description = "A Clean, Modular & Customizable Authorization/Permissions Library."
+version = "0.1.0"
+license = "Apache-2.0"
+authors = ["roblox-afk"]
+registry = "https://github.com/UpliftGames/wally-index"
+realm = "shared"
+
+[dev-dependencies]
