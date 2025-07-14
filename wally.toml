@@ -1,7 +1,7 @@
 [package]
 name = "roblox-afk/hasaccess"
 description = "A Clean, Modular & Customizable Authorization/Permissions Library."
-version = "1.0.0"
+version = "1.0.1"
 license = "MIT"
 include = ["src", "LICENSE", "default.project.json"]
 authors = ["roblox-afk"]
