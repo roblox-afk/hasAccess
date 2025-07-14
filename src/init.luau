@@ -1,6 +1,7 @@
 local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Types = require(script.Types)
+
 type ModuleConfig = Types.ModuleConfig
 type AccessConfig = Types.AccessConfig
 type GroupConfig = Types.GroupConfig
