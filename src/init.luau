@@ -2,9 +2,9 @@ local Players = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local Types = require(script.Types)
 
-type ModuleConfig = Types.ModuleConfig
-type AccessConfig = Types.AccessConfig
-type GroupConfig = Types.GroupConfig
+export type ModuleConfig = Types.ModuleConfig
+export type AccessConfig = Types.AccessConfig
+export type GroupConfig = Types.GroupConfig
 
 local HasAccessPrivate = {
 	NegatePrefix = "!",
