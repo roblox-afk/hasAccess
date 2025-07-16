@@ -1,5 +1,5 @@
 export type AccessConfig = {
-	RequireAll: boolean, -- Default => false
+	RequireAll: boolean | nil, -- Default => false
 } & ({ string } | { AccessConfig })
 
 export type ModuleConfig = {
