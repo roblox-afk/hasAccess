@@ -130,4 +130,4 @@ end
 
 HasAccess:RegisterModulesIn(script.Modules)
 
-return setmetatable({}, HasAccess)
+return setmetatable(HasAccess, HasAccess)
