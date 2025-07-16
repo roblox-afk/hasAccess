@@ -27,7 +27,31 @@ return {
 			return true
 		end
 
-		if string.find(rankRange, "-") then
+		if rankRange:sub(-1) == "+" then
+			local RangeSplit = string.split(rankRange, "+")
+			local TargetRank = tonumber(RangeSplit[1])
+			if not TargetRank and groupConfig.Ranks[RangeSplit[1]] then
+				TargetRank = groupConfig.Ranks[RangeSplit[1]].Rank
+			else
+				error("[HasAccess]: Invalid Target Rank Provided!")
+			end
+
+			return rank >= TargetRank
+		end
+
+		if rankRange:sub(-1) == "<" then
+			local RangeSplit = string.split(rankRange, "<")
+			local TargetRank = tonumber(RangeSplit[1])
+			if not TargetRank and groupConfig.Ranks[RangeSplit[1]] then
+				TargetRank = groupConfig.Ranks[RangeSplit[1]].Rank
+			else
+				error("[HasAccess]: Invalid Target Rank Provided!")
+			end
+
+			return rank <= TargetRank
+		end
+
+		if not groupConfig.Ranks[rankRange] and string.find(rankRange, "-") then
 			local RangeSplit = string.split(rankRange, "-")
 			local Minimum = tonumber(RangeSplit[1])
 			if not Minimum and groupConfig.Ranks[RangeSplit[1]] then
@@ -44,30 +68,6 @@ return {
 			end
 
 			return rank >= Minimum and Maximum >= rank
-		end
-
-		if string.find(rankRange, "+") then
-			local RangeSplit = string.split(rankRange, "+")
-			local TargetRank = tonumber(RangeSplit[1])
-			if not TargetRank and groupConfig.Ranks[RangeSplit[1]] then
-				TargetRank = groupConfig.Ranks[RangeSplit[1]].Rank
-			else
-				error("[HasAccess]: Invalid Target Rank Provided!")
-			end
-
-			return rank >= TargetRank
-		end
-
-		if string.find(rankRange, "<") then
-			local RangeSplit = string.split(rankRange, "<")
-			local TargetRank = tonumber(RangeSplit[1])
-			if not TargetRank and groupConfig.Ranks[RangeSplit[1]] then
-				TargetRank = groupConfig.Ranks[RangeSplit[1]].Rank
-			else
-				error("[HasAccess]: Invalid Target Rank Provided!")
-			end
-
-			return rank <= TargetRank
 		end
 
 		local TargetRank = tonumber(rankRange)
