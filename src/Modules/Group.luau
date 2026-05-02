@@ -16,8 +16,8 @@ return {
 			return false
 		end
 
-		local rank = player:GetRankInGroup(groupConfig.GroupId)
-		if rank == 0 then
+		local success, rank = pcall(player.GetRankInGroupAsync, player, groupConfig.GroupId)
+		if success == false or rank == 0 then
 			return false
 		elseif not rankRange then
 			return true
